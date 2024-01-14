@@ -6,16 +6,18 @@ from django.shortcuts import render
 
 def index(request):
     context = {
-        'title': 'Home',
+        'title': 'Головна SoftAndWood',
         'content': 'Головна сторінка магазина - SoftAndWood',
-        'list': ['first', 'second'],
-        'dict': {'first': 1},
-        'bool': True,
-
     }
 
     return render(request, 'main/index.html', context)
 
 
 def about(request):
-    return HttpResponse('About page')
+    context = {
+        'title': 'SoftAndWood - Про нас',
+        'content': 'Про нас',
+        'text_on_page': "текст про нас і чому ми найкращі.",
+    }
+
+    return render(request, 'main/about.html', context)
